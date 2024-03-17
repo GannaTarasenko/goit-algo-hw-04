@@ -3,7 +3,7 @@ def total_salary(path):
         total_salary = 0  # Ініціалізація змінних для підрахунку загальної заробітної плати та кількості розробників
         num_developers = 0
 
-        with open(path, 'r', encoding='utf-8') as file:  # Відкриття файлу для читання
+        with open('salary_file.txt', 'r') as file:  # Відкриття файлу для читання
             for line in file:  # Прохід по кожному рядку у файлі
                 name, salary = line.strip().split(',')  # Розділення рядка на ім'я та зарплату
                 total_salary += int(salary)  # Додавання зарплати до загальної суми
