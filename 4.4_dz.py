@@ -12,13 +12,17 @@ def add_contact(args, contacts):
 def change_contact(args, contacts):
     name, phone = args
     if name in contacts:
-        raise ValueError("Contact")
-    contacts[name] = phone
-    return "Contact updated successfully"
+        contacts[name] = phone
+        return "Contact change"
+    else:
+        return "This contact is not listed"
 
 def show_contact(args, contacts):
-    name, _ = args
-    return contacts[name]
+    name = args[0]
+    try:
+        return contacts[name]
+    except:
+        return "This contact is not listed"
 
 
 def main():
@@ -45,7 +49,7 @@ def main():
             print(show_contact(args, contacts))
 
         else:
-            print("Invalid command.")
+            print("The assistant bot does not support this command")
 
 
 if __name__ == "__main__":
